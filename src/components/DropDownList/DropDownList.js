@@ -6,7 +6,7 @@ export const DropDownList = (props) => {
             <label>
                 {props.label}
             </label>
-            <select required={props.mandatory & props.itens !== ''}>
+            <select onChange={event => props.whenChanged(event.target.value)} required={props.mandatory} value={props.value}>
                 {props.itens.map(item => <option key={item}>{item}</option>)}
             </select>
         </div>

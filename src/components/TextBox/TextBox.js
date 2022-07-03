@@ -2,6 +2,12 @@ import "./TextBox.css"
 
 export const TextBox = (props) => {
 
+    const placeholderChanged = `${props.placeholder}...`
+
+    const whenTyped = (event) => {
+        props.whenChanged(event.target.value)
+    }
+
     // a way to concatenate the variables that come from props with any string
     //const placeholderWithTxt = `${props.placeholder}...`
 
@@ -10,7 +16,7 @@ export const TextBox = (props) => {
             <label>
                 {props.label}
             </label>
-            <input required={props.mandatory} placeholder={props.placeholder}/>
+            <input value={props.value}  onChange={whenTyped} required={props.mandatory} placeholder={placeholderChanged}/>
         </div>
     )
 }
