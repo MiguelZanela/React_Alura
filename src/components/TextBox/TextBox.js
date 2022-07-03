@@ -10,7 +10,7 @@ export const TextBox = (props) => {
             <label>
                 {props.label}
             </label>
-            <input placeholder={props.placeholder}/>
+            <input required={props.mandatory} placeholder={props.placeholder}/>
         </div>
     )
 }
