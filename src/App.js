@@ -8,6 +8,9 @@ function App() {
 
   const teams = [
     {
+      name: '',
+    },
+    {
       name: 'Programming',
       primaryColor: '#57C278',
       secondaryColor: '#D9F7E9'
@@ -44,19 +47,34 @@ function App() {
     }
   ];
 
-  const [employees, setEmployee] = useState([])
+  const [collaborators, setCollaborator] = useState([])
 
-  const toTheNewRegisteredEmployee = (employee) => {
-    console.log(employee)
-    setEmployee([...employees, employee])
+  const toTheNewRegisteredCollaborator = (collaborator) => {
+    console.log(collaborator)
+    setCollaborator([...collaborators, collaborator])
+  }
+
+  const returnOnlyValidTeams = (teams) => {
+    var validTeams = teams.reduce((validTeams,team) => {
+      if (team.name !== '') {
+        validTeams.push(team);
+      }
+      return validTeams;
+    }, []);
+    return validTeams;
   }
 
   return (
     <div className="App">
       <Banner />
-      <Form teams={teams.map(team => team.name)} toTheRegisteredEmployee={employee => toTheNewRegisteredEmployee(employee)}/>
-      {teams.map(team => <Team key={team.name} name={team.name} 
-                  primaryColor={team.primaryColor} secondaryColor={team.secondaryColor}/>)}
+      <Form teamsName={teams.map(team => team.name)} toTheRegisteredCollaborator={collaborator => toTheNewRegisteredCollaborator(collaborator)}/>
+      {returnOnlyValidTeams(teams).map(team => <Team 
+                                        key={team.name} 
+                                        name={team.name} 
+                                        primaryColor={team.primaryColor} 
+                                        secondaryColor={team.secondaryColor}
+                                        collaborator={collaborators}
+                                        />)}
     </div>
   );
 }

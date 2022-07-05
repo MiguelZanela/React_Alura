@@ -1,3 +1,4 @@
+import Collaborator from '../Collaborator'
 import './Team.css'
 
 export const Team = (props) => {

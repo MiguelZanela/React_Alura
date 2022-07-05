@@ -17,7 +17,7 @@ export const Form = (props) => {
 
     const whenSaving = (event) => {
         event.preventDefault()
-        props.toTheRegisteredEmployee({
+        props.toTheRegisteredCollaborator({
             name, // the same as  name: name
             job, // the same as  job: job
             image, // the same as  image: image
@@ -51,8 +51,8 @@ export const Form = (props) => {
                 />
                 <DropDownList 
                     mandatory={true} 
-                    label="Teams" 
-                    itens={props.teams}
+                    label="Teams"
+                    itens={props.teamsName}
                     value={team}
                     whenChanged={value => setTeam(value)}
                 />
