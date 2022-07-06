@@ -8,17 +8,6 @@ import Button from '../Button';
 
 export const Form = (props) => {
 
-    const teams = [
-        '',
-        'Programming',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX and Design',
-        'Mobile',
-        'Innovation and Management'
-    ]
-
     // Hooks, value field for read and setValue for set the value
     // const [value, setValue] = useState('you can put any default value here')
     const [name, setName] = useState('')
@@ -28,12 +17,16 @@ export const Form = (props) => {
 
     const whenSaving = (event) => {
         event.preventDefault()
-        props.toTheRegisteredEmployee({
+        props.toTheRegisteredCollaborator({
             name, // the same as  name: name
             job, // the same as  job: job
             image, // the same as  image: image
             team // the same as  team: team
         })
+        setName('')
+        setJob('')
+        setImage('')
+        setTeam('')
     }
 
     return (
@@ -62,8 +55,8 @@ export const Form = (props) => {
                 />
                 <DropDownList 
                     mandatory={true} 
-                    label="Teams" 
-                    itens={teams}
+                    label="Teams"
+                    itens={props.teamsName}
                     value={team}
                     whenChanged={value => setTeam(value)}
                 />
