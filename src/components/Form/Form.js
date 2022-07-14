@@ -56,7 +56,7 @@ export const Form = (props) => {
                 <DropDownList 
                     mandatory={true} 
                     label="Teams"
-                    itens={props.teamsName}
+                    items={props.teamsName}
                     value={team}
                     whenChanged={value => setTeam(value)}
                 />

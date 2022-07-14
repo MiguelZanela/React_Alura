@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+This project is up and running [here](https://react-alura-delta.vercel.app/). 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -24,10 +26,24 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.\need to download and install this pre-required
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `Run with Docker`
+
+To run this application with docker, need to download and install this pre-required:
+- [Docker](https://www.docker.com/) version 20.10.16
+- [Docker Compose](https://docs.docker.com/compose/install/) version 1.29.2
+  
+After the pre-required are installed you can proceed to deploy through these commands:
+```
+docker build --tag react .
+```
+```
+docker-compose up -d
+```
 
 ### `npm run eject`
 
